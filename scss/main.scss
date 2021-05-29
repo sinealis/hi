@@ -1,0 +1,195 @@
+@import "config";
+@import "menu";
+
+html {
+	box-sizing: border-box;
+}
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+/*--------Clear-------*/
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+.cf:after {
+    clear: both;
+}
+
+body {
+	@include background;
+	background: $primary-color;
+	color: set-text-color($primary-color);
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: 'Palanquin Dark', 'Quicksand', sans-serif;
+	line-height: 1.5;
+}
+h1, h2, h3 {
+	margin: 0;
+	font-weight: 400;
+
+	&.lg-heading {
+		font-size: 7rem;
+		text-transform: uppercase;
+	}
+
+	&.sm-heading {
+		display: inline-block;
+		padding: 0.75rem 1rem;
+		margin: 2rem 0;
+		text-align: center;
+		background: rgba(lighten($primary-color, 3), 0.5);
+	}
+	&.m-heading {
+		font-size: 5rem;
+		font-weight: 400;
+		text-transform: uppercase;
+		margin-top: 1rem;
+		margin-bottom: 4rem;
+	}
+}
+a {
+	color: #fff;
+	text-decoration: none;
+}
+header {
+	position: fixed;
+	z-index: 2;
+	width: 100%;
+}
+.text-secondary {
+	color: $secondary-color;
+}
+main {
+	padding: 4rem 5rem;
+	height: 100%;
+
+	.icons {
+		margin-top: 2rem;
+
+		a {
+			padding: 0.5rem;
+
+			&:hover {
+				color: $secondary-color;
+				@include easeOut;
+			}
+		}
+	}
+
+	&#home {
+		overflow: hidden; // we do not want scrollbar
+		text-align: center;
+		h1 {
+			margin-top: 17vh;
+		}
+	}
+}
+
+.about-info {
+	display: grid;
+	grid-gap: 1.875em; /* 30/16 */
+	grid-template-areas: "lang1 lang2";
+	grid-template-columns: repeat(2, 1fr);
+	margin-top: 2rem;
+}
+.lang-1 {
+	grid-area: lang1;
+}
+.lang-2 {
+	grid-area: lang2;
+}
+.lang {
+	font-family: 'Quicksand', sans-serif;
+	background: lighten($primary-color, 3);
+	padding: 1.25rem 1rem; /* 20px 16px */
+	border: $secondary-color 0.125rem solid; /* 2/16 */
+
+	p {
+		font-weight: 400;
+		line-height: 1.625rem; /* 26px/16px */
+		margin-bottom: 0;
+	}
+}
+
+// Stuff
+.projects {
+	display: grid;
+	grid-gap: 1.25rem; /* 20px/16px */
+	grid-template-columns: repeat(3, 1fr);
+	.item {
+		line-height: 0;
+	}
+	img {
+		width: 100%;
+		border: 0.125rem #f9f9f9 solid; /* 2px/16px */
+
+		&:hover {
+			opacity: .5;
+			@include easeOut;
+		}
+	}
+}
+
+// Button styles
+.btn {
+	display: block;
+	padding: 0.5rem 1rem;
+	border: 0;
+	margin-bottom: 0.3rem;
+	&:hover {
+		background: $secondary-color;
+		color: set-text-color($secondary-color);
+	}
+}
+.btn-dark {
+	@extend .btn;
+	background: darken($primary-color, 50);
+	color: #f9f9f9;
+}
+.btn-light {
+	@extend .btn;
+	background: lighten($primary-color, 50);
+	color: #333;
+}
+
+
+// Contact Page
+.boxes {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	align-items: center;
+	margin-top: 1rem;
+
+	div {
+		font-size: 1.50rem;
+		border: 0.125rem #f9f9f9 solid;
+		padding: 1.5rem 2.5rem;
+		margin-bottom: 3rem;
+		@include easeOut;
+
+		&:hover {
+			background: $secondary-color;
+			color: set-text-color($secondary-color);
+			span {
+				color: set-text-color($secondary-color);
+			}
+		}
+	}
+}
+#contact {
+	height: 90vh;
+}
+footer {
+	height: 10vh;
+	text-align: center;
+	padding: 1.4em 1em;
+	background: darken($primary-color, 10);
+	color: set-text-color($primary-color);
+}
+
+@import "mobile";

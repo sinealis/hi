@@ -1,0 +1,118 @@
+// Widescreen
+@include mediaXL {
+	.projects {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
+// Desktops and Laptops
+@include mediaLg {
+	h1, h2, h3 {
+		&.lg-heading {
+			font-size: 6rem;
+		}
+		&.sm-heading {
+			padding: 0.5rem 1rem;
+			margin: 1.50rem 0;
+			text-align: center;
+		}
+		&.m-heading {
+			font-size: 4rem;
+			margin-bottom: 3rem;
+		}
+	}
+}
+
+// Tablets
+@include mediaMd {
+	.menu-btn {
+		top: 1.875rem; /* 30px */
+		right: 1.875rem; /* 30px */
+	}
+	main {
+		padding: 3rem 5rem 3rem 3rem;
+		align-items: center;
+
+		.lg-heading {
+			line-height: 1;
+			margin-bottom: 1rem;
+		}
+	}
+	.menu-nav {
+		float: none;
+		width: 100%;
+		min-height: 0;
+
+		&.show {
+			transform: translate3d(0,0,0,);
+		}
+	}
+	.menu-nav {
+		height: 100vh;
+		transform: translate3d(-100%,0,0,);
+		font-size: 1.5rem; /* 24px/16px */
+	}
+	.menu-branding {
+		display: none;
+	}
+	h1, h2, h3 {
+		&.lg-heading {
+			font-size: 5rem;
+		}
+		&.sm-heading {
+			padding: 0.5rem 1rem;
+			margin: 1.1250rem auto;
+		}
+		&.m-heading {
+			font-size: 3rem;
+			margin-bottom: 2rem;
+		}
+	}
+	.about-info {
+		grid-template-areas:
+			"lang1"
+			"lang2";
+		grid-template-columns: 1fr;
+
+		h3, p {
+			text-align: left;
+		}
+	}
+	.projects {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.boxes div {
+    	font-size: 1.125rem;
+	}
+}
+
+// Smartphones
+@include mediaSm {
+	.menu-btn {
+		top: 1.5625rem; /* 25px */
+		right: 1.5625rem; /* 25px */
+	}
+	main {
+		padding: 3rem 4rem 2rem 2rem;
+	}
+	h1, h2, h3 {
+		&.lg-heading {
+			font-size: 4rem;
+		}
+		&.sm-heading {
+			padding: 0.5rem 1rem;
+		}
+		&.m-heading {
+			font-size: 2rem;
+		}
+	}
+	main#home h1 {
+		margin-top: 20vh;
+	}
+	.projects {
+		grid-template-columns: 1fr;
+	}
+	.boxes div {
+    	font-size: 1rem;
+	}
+}
