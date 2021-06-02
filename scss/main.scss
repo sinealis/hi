@@ -7,7 +7,35 @@ html {
 *, *:before, *:after {
 	box-sizing: inherit;
 }
-/*--------Clear-------*/
+
+@-webkit-keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.animate {
+	-webkit-animation: opacity 1.5s both;
+	        animation: opacity 1.5s both;
+}
+
+// Clear
 .cf:before,
 .cf:after {
     content: " ";
@@ -35,7 +63,6 @@ h1, h2, h3 {
 		font-size: 7rem;
 		text-transform: uppercase;
 	}
-
 	&.sm-heading {
 		display: inline-block;
 		padding: 0.75rem 1rem;
