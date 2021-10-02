@@ -29,12 +29,4 @@ function toggleMenu () {
 	}
 }
 
-function logoAnimate () {
-	var tl = new TimelineMax();
 
-	tl.fromTo("#name", 1, { y: -500, opacity: 0 }, { y: 0, opacity: 1, ease: "power4.out" }, .5).fromTo("#dev", 1, { y: -100, opacity: 0 }, { y: 0, opacity: 1, ease: "power4.out" }, 1)
-		.staggerFrom(".fab", 0.9, { opacity: 0, y: -40, ease: "power4.out" }, 0.3);
-}
-window.onload = function () {
-	logoAnimate();
-}
